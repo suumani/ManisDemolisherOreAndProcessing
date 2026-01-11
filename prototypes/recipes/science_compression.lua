@@ -25,26 +25,44 @@ local SCIENCE_PACKS = {
 }
 
 local STAGES = {
-  { key = "compressed",       pack = "manis-demolin-pack",          prev = nil },
-  { key = "high-compressed",  pack = "manis-demolin-pack-speed",    prev = "compressed" },
-  { key = "ultra-compressed", pack = "manis-demolin-pack-gigantic", prev = "high-compressed" },
-  { key = "ultimate",         pack = "manis-demolin-pack-king",     prev = "ultra-compressed" },
+  { key = "compressed",       pack = "manis-demolin-pack",          prev = nil,              order = "a" },
+  { key = "high-compressed",  pack = "manis-demolin-pack-speed",    prev = "compressed",     order = "b" },
+  { key = "ultra-compressed", pack = "manis-demolin-pack-gigantic", prev = "high-compressed",order = "c" },
+  { key = "ultimate",         pack = "manis-demolin-pack-king",     prev = "ultra-compressed",order = "d" },
 }
 
 local function compressed_item_name(stage_key, science_key)
   return ("manis-%s-%s-pack"):format(stage_key, science_key)
 end
 
-local function make_recipe(name, ingredients, results, energy)
+-- Alpha: one icon reused for all compression recipes
+local ICON = "__ManisDemolisherOreAndProcessing__/graphics/icons/demolin-pack.png"
+local ICON_SIZE = 64
+
+local function make_recipe(name, ingredients, results, energy, order)
   return {
     type = "recipe",
     name = name,
     enabled = false,
     energy_required = energy or 5,
 
+    icon = ICON,
+    icon_size = ICON_SIZE,
+
+    order = order,
+
     ingredients = ingredients,
     results = results,
   }
+end
+
+local function order_compress(stage_order, stage_key, science_key)
+  -- stage_order: a/b/c/d
+  return ("z[demolin]-g[compress]-a[compress]-%s[%s]-%s[%s]"):format(stage_order, stage_key, science_key, science_key)
+end
+
+local function order_unpack(stage_order, stage_key, science_key)
+  return ("z[demolin]-g[compress]-b[unpack]-%s[%s]-%s[%s]"):format(stage_order, stage_key, science_key, science_key)
 end
 
 local recipes = {}
@@ -66,7 +84,8 @@ for _, s in ipairs(SCIENCE_PACKS) do
       {
         { type = "item", name = output_name, amount = 1 },
       },
-      5
+      5,
+      order_compress(st.order, st.key, s.key)
     ))
   end
 
@@ -93,7 +112,8 @@ for _, s in ipairs(SCIENCE_PACKS) do
       {
         { type = "item", name = output_name, amount = 10 },
       },
-      2
+      2,
+      order_unpack(st.order, st.key, s.key)
     ))
   end
 end
