@@ -12,6 +12,7 @@
     "quality >= 2.0.0",
     "space-age >= 2.0.0",
     "Manis_lib >= 0.0.9",
-    "Manis_definitions >= 0.0.2"
+    "Manis_definitions >= 0.0.2",
+    "? ManisBossDemolisher >= 0.0.8"
     ]
 }
