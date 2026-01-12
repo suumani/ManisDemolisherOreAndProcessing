@@ -8,8 +8,10 @@
     "thumbnail": "thumbnail.png",
     "dependencies": [
     "base >= 2.0.0",
+    "elevated-rails >= 2.0.0",
     "quality >= 2.0.0",
-    "Manis_lib >= 0.0.7",
-    "Manis_definitions >= 0.0.1"
+    "space-age >= 2.0.0",
+    "Manis_lib >= 0.0.9",
+    "Manis_definitions >= 0.0.2"
     ]
 }
