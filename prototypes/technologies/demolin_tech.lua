@@ -183,7 +183,7 @@ data:extend({
     order = "z[demolin]-c[compression-basic]",
 
     count = 1000,
-    ingredients = packs_with_boss(1000),
+    ingredients = packs_with_boss(1),
     prerequisites = { "manis-demolin-centrifuge" },
     effects = tech_unlock_effects_for_stage("compressed"),
   }),
@@ -194,7 +194,7 @@ data:extend({
     order = "z[demolin]-d[compression-speed]",
 
     count = 2000,
-    ingredients = packs_with_boss(2000),
+    ingredients = packs_with_boss(1),
     prerequisites = { "manis-demolin-compression-basic" },
     effects = tech_unlock_effects_for_stage("high-compressed"),
   }),
@@ -205,7 +205,7 @@ data:extend({
     order = "z[demolin]-e[compression-gigantic]",
 
     count = 4000,
-    ingredients = packs_with_boss(4000),
+    ingredients = packs_with_boss(1),
     prerequisites = { "manis-demolin-compression-speed" },
     effects = tech_unlock_effects_for_stage("ultra-compressed"),
   }),
@@ -216,7 +216,7 @@ data:extend({
     order = "z[demolin]-f[compression-king]",
 
     count = 8000,
-    ingredients = packs_with_boss(8000),
+    ingredients = packs_with_boss(1),
     prerequisites = { "manis-demolin-compression-gigantic" },
     effects = tech_unlock_effects_for_stage("ultimate"),
   }),

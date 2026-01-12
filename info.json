@@ -1,10 +1,10 @@
 {
     "name": "ManisDemolisherOreAndProcessing",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "factorio_version": "2.0",
-    "title": "ManisDemolisherOreAndProcessing",
+    "title": "Manis Demolisher Ore And Processing",
     "author": "suumani",
-    "description": "ManisDemolisherOreAndProcessing",
+    "description": "ManisDemolisher Ore And Processing",
     "thumbnail": "thumbnail.png",
     "dependencies": [
     "base >= 2.0.0",
