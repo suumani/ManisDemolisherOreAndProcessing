@@ -181,6 +181,7 @@ data:extend({
     name = "manis-demolin-compression-basic",
     icon = "__ManisDemolisherOreAndProcessing__/graphics/technology/demolin-compression-basic.png",
     order = "z[demolin]-c[compression-basic]",
+    icon_size = 64,
 
     count = 1000,
     ingredients = packs_with_boss(1),
@@ -192,6 +193,7 @@ data:extend({
     name = "manis-demolin-compression-speed",
     icon = "__ManisDemolisherOreAndProcessing__/graphics/technology/demolin-compression-speed.png",
     order = "z[demolin]-d[compression-speed]",
+    icon_size = 64,
 
     count = 2000,
     ingredients = packs_with_boss(1),
@@ -203,6 +205,7 @@ data:extend({
     name = "manis-demolin-compression-gigantic",
     icon = "__ManisDemolisherOreAndProcessing__/graphics/technology/demolin-compression-gigantic.png",
     order = "z[demolin]-e[compression-gigantic]",
+    icon_size = 64,
 
     count = 4000,
     ingredients = packs_with_boss(1),
@@ -214,6 +217,7 @@ data:extend({
     name = "manis-demolin-compression-king",
     icon = "__ManisDemolisherOreAndProcessing__/graphics/technology/demolin-compression-king.png",
     order = "z[demolin]-f[compression-king]",
+    icon_size = 64,
 
     count = 8000,
     ingredients = packs_with_boss(1),
