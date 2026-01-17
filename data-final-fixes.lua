@@ -33,48 +33,48 @@ local D = require("__Manis_definitions__/shared/demolisher_names")
 
 local DROP_TABLE = {
   -- normal series
-  [D.SMALL]  = { tungsten=17, demolin=3 },
-  [D.MEDIUM] = { tungsten=17, demolin=5 },
-  [D.BIG]    = { tungsten=17, demolin=7 },
+  [D.SMALL]  = { tungsten=5, demolin=3 },
+  [D.MEDIUM] = { tungsten=7, demolin=5 },
+  [D.BIG]    = { tungsten=9, demolin=7 },
 
   -- additional normal series
-  [D.MANIS_SMALL]  = { tungsten=17, demolin=3 },
-  [D.MANIS_MEDIUM] = { tungsten=17, demolin=5 },
-  [D.MANIS_BIG]    = { tungsten=17, demolin=7 },
+  [D.MANIS_SMALL]  = { tungsten=5, demolin=3 },
+  [D.MANIS_MEDIUM] = { tungsten=7, demolin=5 },
+  [D.MANIS_BIG]    = { tungsten=9, demolin=7 },
 
-  [D.MANIS_SMALL_ALT]  = { tungsten=3, iron=15, copper=15, demolin=3 },
-  [D.MANIS_MEDIUM_ALT] = { tungsten=5, iron=15, copper=15, demolin=5 },
-  [D.MANIS_BIG_ALT]    = { tungsten=7, iron=15, copper=15, demolin=7 },
+  [D.MANIS_SMALL_ALT]  = { iron=10, copper=5, demolin=1 },
+  [D.MANIS_MEDIUM_ALT] = { iron=10, copper=5, demolin=3 },
+  [D.MANIS_BIG_ALT]    = { tungsten=1, iron=10, copper=5, demolin=5 },
 
   -- behemoth
-  [D.MANIS_BEHEMOTH]     = { tungsten=17, demolin=9 },
-  [D.MANIS_BEHEMOTH_ALT] = { tungsten=9, iron=15, copper=15, demolin=9 },
+  [D.MANIS_BEHEMOTH]     = { tungsten=9, demolin=9 },
+  [D.MANIS_BEHEMOTH_ALT] = { tungsten=3, iron=10, copper=5, demolin=7 },
 
   -- speedstar-demolisher series
-  [D.MANIS_SPEEDSTAR_SMALL]    = { tungsten=17, demolin=3, speed=3 },
-  [D.MANIS_SPEEDSTAR_MEDIUM]   = { tungsten=17, demolin=5, speed=5 },
-  [D.MANIS_SPEEDSTAR_BIG]      = { tungsten=17, demolin=7, speed=7 },
-  [D.MANIS_SPEEDSTAR_BEHEMOTH] = { tungsten=17, demolin=9, speed=9 },
+  [D.MANIS_SPEEDSTAR_SMALL]    = { tungsten=3, demolin=3, speed=1 },
+  [D.MANIS_SPEEDSTAR_MEDIUM]   = { tungsten=5, demolin=5, speed=3 },
+  [D.MANIS_SPEEDSTAR_BIG]      = { tungsten=7, demolin=7, speed=5 },
+  [D.MANIS_SPEEDSTAR_BEHEMOTH] = { tungsten=9, demolin=9, speed=7 },
 
-  [D.MANIS_SPEEDSTAR_SMALL_ALT]    = { tungsten=3, iron=15, copper=15, demolin=3, speed=3 },
-  [D.MANIS_SPEEDSTAR_MEDIUM_ALT]   = { tungsten=5, iron=15, copper=15, demolin=5, speed=5 },
-  [D.MANIS_SPEEDSTAR_BIG_ALT]      = { tungsten=7, iron=15, copper=15, demolin=7, speed=7 },
-  [D.MANIS_SPEEDSTAR_BEHEMOTH_ALT] = { tungsten=9, iron=15, copper=15, demolin=9, speed=9 },
+  [D.MANIS_SPEEDSTAR_SMALL_ALT]    = { iron=10, copper=5, demolin=3, speed=1 },
+  [D.MANIS_SPEEDSTAR_MEDIUM_ALT]   = { iron=10, copper=5, demolin=5, speed=3 },
+  [D.MANIS_SPEEDSTAR_BIG_ALT]      = { tungsten=1, iron=15, copper=15, demolin=7, speed=5 },
+  [D.MANIS_SPEEDSTAR_BEHEMOTH_ALT] = { tungsten=3, iron=15, copper=15, demolin=9, speed=7 },
 
   -- gigantic-demolisher series
-  [D.MANIS_GIGANTIC_SMALL]    = { tungsten=17, demolin=3, gigantic=3 },
-  [D.MANIS_GIGANTIC_MEDIUM]   = { tungsten=17, demolin=5, gigantic=5 },
-  [D.MANIS_GIGANTIC_BIG]      = { tungsten=17, demolin=7, gigantic=7 },
-  [D.MANIS_GIGANTIC_BEHEMOTH] = { tungsten=17, demolin=9, gigantic=9 },
+  [D.MANIS_GIGANTIC_SMALL]    = { tungsten=5, demolin=3, gigantic=1 },
+  [D.MANIS_GIGANTIC_MEDIUM]   = { tungsten=7, demolin=5, gigantic=3 },
+  [D.MANIS_GIGANTIC_BIG]      = { tungsten=9, demolin=7, gigantic=5 },
+  [D.MANIS_GIGANTIC_BEHEMOTH] = { tungsten=11, demolin=9, gigantic=7 },
 
-  [D.MANIS_GIGANTIC_SMALL_ALT]    = { tungsten=9, iron=15, copper=15, demolin=3, gigantic=3 },
-  [D.MANIS_GIGANTIC_MEDIUM_ALT]   = { tungsten=9, iron=15, copper=15, demolin=5, gigantic=5 },
-  [D.MANIS_GIGANTIC_BIG_ALT]      = { tungsten=9, iron=15, copper=15, demolin=7, gigantic=7 },
-  [D.MANIS_GIGANTIC_BEHEMOTH_ALT] = { tungsten=9, iron=15, copper=15, demolin=9, gigantic=9 },
+  [D.MANIS_GIGANTIC_SMALL_ALT]    = { tungsten=1, iron=15, copper=15, demolin=3, gigantic=1 },
+  [D.MANIS_GIGANTIC_MEDIUM_ALT]   = { tungsten=3, iron=15, copper=15, demolin=5, gigantic=3 },
+  [D.MANIS_GIGANTIC_BIG_ALT]      = { tungsten=5, iron=15, copper=15, demolin=7, gigantic=5 },
+  [D.MANIS_GIGANTIC_BEHEMOTH_ALT] = { tungsten=7, iron=15, copper=15, demolin=9, gigantic=7 },
 
   -- crazy-king-demolisher series
   [D.MANIS_CRAZY_KING]     = { tungsten=17, demolin=9, speed=9, gigantic=9, king=9 },
-  [D.MANIS_CRAZY_KING_ALT] = { tungsten=9, iron=15, copper=15, demolin=9, speed=9, gigantic=9, king=9 },
+  [D.MANIS_CRAZY_KING_ALT] = { tungsten=9, iron=15, copper=15, demolin=11, speed=9, gigantic=9, king=7 },
 }
 
 local function item_exists(name)
