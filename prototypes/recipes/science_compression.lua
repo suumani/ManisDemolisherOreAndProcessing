@@ -35,21 +35,24 @@ local function compressed_item_name(stage_key, science_key)
   return ("manis-%s-%s-pack"):format(stage_key, science_key)
 end
 
--- Alpha: one icon reused for all compression recipes
-local ICON = "__ManisDemolisherOreAndProcessing__/graphics/icons/demolin-pack.png"
 local ICON_SIZE = 64
+local function science_icon(stage_key, science_key)
+  return ("__ManisDemolisherOreAndProcessing__/graphics/icons/science/%s-%s-science-pack.png")
+    :format(stage_key, science_key)
+end
 
-local function make_recipe(name, ingredients, results, energy, order)
+local function make_recipe(name, ingredients, results, energy, order, subgroup, icon)
   return {
     type = "recipe",
     name = name,
     enabled = false,
     energy_required = energy or 5,
 
-    icon = ICON,
+    icon = icon,
     icon_size = ICON_SIZE,
 
     order = order,
+    subgroup = subgroup,
 
     ingredients = ingredients,
     results = results,
@@ -85,7 +88,9 @@ for _, s in ipairs(SCIENCE_PACKS) do
         { type = "item", name = output_name, amount = 1 },
       },
       5,
-      order_compress(st.order, st.key, s.key)
+      order_compress(st.order, st.key, s.key),
+      "manis-demolin-compress",
+      science_icon(st.key, s.key)
     ))
   end
 
@@ -113,7 +118,9 @@ for _, s in ipairs(SCIENCE_PACKS) do
         { type = "item", name = output_name, amount = 10 },
       },
       2,
-      order_unpack(st.order, st.key, s.key)
+      order_unpack(st.order, st.key, s.key),
+      "manis-demolin-unpack",
+      science_icon(st.key, s.key)
     ))
   end
 end

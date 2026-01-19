@@ -18,6 +18,7 @@ require("prototypes.fluids.demolin_fluids")
 -- Entities must exist before recipes are browsed in UI (and before place_result is used).
 require("prototypes.entities.demolin_machines")
 
+require("prototypes.item-groups")
 require("prototypes.recipes.machines")
 require("prototypes.recipes.demolin_solution")
 require("prototypes.recipes.demolin_breeding")
@@ -26,5 +27,7 @@ require("prototypes.recipes.demolin_smelting")
 require("prototypes.recipes.demolin_packaging")
 require("prototypes.recipes.boss_science_pack")
 require("prototypes.recipes.science_compression")
+require("prototypes.recipes.demolin_synthesis")
+
 
 require("prototypes.technologies.demolin_tech")

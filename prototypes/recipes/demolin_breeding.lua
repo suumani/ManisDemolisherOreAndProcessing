@@ -10,11 +10,14 @@ local function make_recipe(args)
     name = args.name,
     category = "demolin-centrifuging",
     enabled = false,
-    energy_required = args.energy_required or 20,
+
+    -- ★変更：増殖は重めに統一（Kovarex相当）
+    energy_required = args.energy_required or 60,
+
     icon = args.icon,
     icon_size = 64,
 
-    order = args.order, -- ?
+    order = args.order,
 
     ingredients = args.ingredients,
     results = args.results,
@@ -27,7 +30,9 @@ data:extend({
     order = "z[demolin]-b[breed]-a[base]",
     icon = "__ManisDemolisherOreAndProcessing__/graphics/icons/demolin-ore.png",
     ingredients = {
-      { type="item", name="tungsten-ore", amount=40 },
+      -- ★変更：40 → 5（有限・消失資源なので軽く）
+      { type="item", name="tungsten-ore", amount=5 },
+
       { type="item", name="manis-demolin-ore", amount=40 },
       { type="fluid", name="sulfuric-acid", amount=500 },
     },
