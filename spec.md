@@ -1,4 +1,6 @@
-# Mani's Demolisher Ore And Processing — Specification (spec v0.0.1)
+# __ManisDemolisherOreAndProcessing/spec.md
+
+# Mani's Demolisher Ore And Processing — Specification (spec v0.0.6)
 
 This document records the **design intent, specifications, and agreed principles** of Mani's Demolisher Ore And Processing.  
 Its purpose is to preserve decisions, judgment criteria, and priority rules that are **not** described in the README or on the Mod Portal.
@@ -51,6 +53,63 @@ Its purpose is to preserve decisions, judgment criteria, and priority rules that
 - No forced grinding (supply is achievable through breeding, catalysts, and circulation)
 
 ---
+
+## 2.x Demolisher Population Control Research (Added)
+
+### 2.x.1 Scope of Responsibility
+
+This mod introduces **research related to Demolisher population control**,  
+but **does not directly enforce or apply any population cap** by itself.
+
+Actual population limits are:
+- Calculated and enforced by other mods (e.g. BossDemolisher, BreedingDemolisher, TrueFulgoraConqueror)
+- Applied at spawn / virtual materialization points
+- Evaluated per planet and per context
+
+This mod’s role is strictly limited to **providing the research unlock and its parameters**.
+
+---
+
+### 2.3.2 Research Definition
+
+- Research name: `manis-demolisher-cap-down`
+- Type: Infinite research
+- Effect:
+  - Reduces the effective Demolisher population cap
+  - Reduction is linear per research level
+  - Maximum reduction is capped (e.g. −75%)
+
+This research does **not**:
+- Remove Demolishers
+- Prevent spawns directly
+- Apply hard limits inside this mod
+
+---
+
+### 2.3.3 Design Intent
+
+The purpose of this research is to:
+- Provide a **production-driven response** to Demolisher pressure
+- Allow factory progression and logistics optimization to influence enemy pressure
+- Keep population control **decoupled** from combat mechanics
+
+By placing this research in a production-focused mod:
+- Combat mods remain focused on threat behavior
+- Production mods provide strategic, indirect control
+- Responsibility boundaries between mods remain explicit and stable
+
+---
+
+### 2.3.4 Compatibility Policy
+
+- This research is intentionally generic
+- Other mods may:
+  - Interpret its level differently
+  - Apply different minimum caps (e.g. Boss: 10 / Breeding: 50 / Fulgora: 50)
+- This mod makes **no assumptions** about how or where the cap is enforced
+
+Any change in cap application logic must be handled by the consuming mod,
+not by ManisDemolisherOreAndProcessing itself.
 
 ## 3. Demolisher Remains Processing Specification
 

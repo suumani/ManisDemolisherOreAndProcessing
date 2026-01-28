@@ -31,3 +31,4 @@ require("prototypes.recipes.demolin_synthesis")
 
 
 require("prototypes.technologies.demolin_tech")
+require("prototypes.technologies.manis_demolisher_cap_down")
