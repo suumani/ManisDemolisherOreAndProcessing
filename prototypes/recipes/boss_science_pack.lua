@@ -21,6 +21,7 @@ local function make_recipe(args)
 
     order = args.order, -- ✅
 
+    allow_productivity = true,
     ingredients = args.ingredients,
     results = args.results,
   }
