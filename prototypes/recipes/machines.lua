@@ -33,6 +33,7 @@ data:extend({
       { type="item", name="pipe", amount=20 },
       { type="item", name="steel-plate", amount=50 },
     },
+    icon = "__ManisDemolisherOreAndProcessing__/graphics/icons/demolin-water-refinery.png",
     results = { { type="item", name="manis-demolin-water-refinery", amount=1 } },
   }),
   make_recipe({
@@ -43,6 +44,7 @@ data:extend({
       { type="item", name="advanced-circuit", amount=20 },
       { type="item", name="steel-plate", amount=50 },
     },
+    icon = "__ManisDemolisherOreAndProcessing__/graphics/icons/demolin-centrifuge.png",
     results = { { type="item", name="manis-demolin-centrifuge", amount=1 } },
   }),
 })
