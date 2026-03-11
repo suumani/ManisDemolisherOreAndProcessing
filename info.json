@@ -1,6 +1,6 @@
 {
     "name": "ManisDemolisherOreAndProcessing",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "factorio_version": "2.0",
     "title": "Manis Demolisher Ore And Processing",
     "author": "suumani",
@@ -11,8 +11,8 @@
     "elevated-rails >= 2.0.0",
     "quality >= 2.0.0",
     "space-age >= 2.0.0",
-    "Manis_lib >= 0.1.4",
-    "Manis_definitions >= 0.0.8",
+    "Manis_lib >= 0.1.8",
+    "Manis_definitions >= 0.1.0",
     "? ManisBossDemolisher >= 0.1.4"
     ]
 }

@@ -1,4 +1,4 @@
--- data-final-fixes.lua
+-- __ManisDemolisherOreAndProcessing__/data-final-fixes.lua
 
 -- ----------------------------
 -- Adds "manis-boss-science-pack" to every lab's inputs.
@@ -29,52 +29,68 @@ end
 -- DROP_TABLE (source of truth)
 -- values: { tungsten, iron, copper, demolin, speed, gigantic, king }
 -- ------------------------------------------------------------
-local D = require("__Manis_definitions__/shared/demolisher_names")
+local ok, D = pcall(require, "__Manis_definitions__/shared/demolisher_names")
 
 local DROP_TABLE = {
   -- normal series
-  [D.SMALL]  = { tungsten=5, demolin=3 },
-  [D.MEDIUM] = { tungsten=7, demolin=5 },
-  [D.BIG]    = { tungsten=9, demolin=7 },
+  [D.SMALL]  = { tungsten=5, demolin=1 },
+  [D.MEDIUM] = { tungsten=7, demolin=1 },
+  [D.BIG]    = { tungsten=9, demolin=1 },
 
   -- additional normal series
-  [D.MANIS_SMALL]  = { tungsten=5, demolin=3 },
-  [D.MANIS_MEDIUM] = { tungsten=7, demolin=5 },
-  [D.MANIS_BIG]    = { tungsten=9, demolin=7 },
+  [D.MANIS_SMALL]  = { tungsten=5, demolin=1 },
+  [D.MANIS_MEDIUM] = { tungsten=7, demolin=1 },
+  [D.MANIS_BIG]    = { tungsten=9, demolin=1 },
 
   [D.MANIS_SMALL_ALT]  = { iron=10, copper=5, demolin=1 },
-  [D.MANIS_MEDIUM_ALT] = { iron=10, copper=5, demolin=3 },
-  [D.MANIS_BIG_ALT]    = { tungsten=1, iron=10, copper=5, demolin=5 },
+  [D.MANIS_MEDIUM_ALT] = { iron=10, copper=5, demolin=1 },
+  [D.MANIS_BIG_ALT]    = { tungsten=1, iron=10, copper=5, demolin=1 },
 
   -- behemoth
-  [D.MANIS_BEHEMOTH]     = { tungsten=9, demolin=9 },
-  [D.MANIS_BEHEMOTH_ALT] = { tungsten=3, iron=10, copper=5, demolin=7 },
+  [D.MANIS_BEHEMOTH]     = { tungsten=9, demolin=1 },
+  [D.MANIS_BEHEMOTH_ALT] = { tungsten=3, iron=10, copper=5, demolin=1 },
 
   -- speedstar-demolisher series
-  [D.MANIS_SPEEDSTAR_SMALL]    = { tungsten=3, demolin=3, speed=1 },
-  [D.MANIS_SPEEDSTAR_MEDIUM]   = { tungsten=5, demolin=5, speed=3 },
-  [D.MANIS_SPEEDSTAR_BIG]      = { tungsten=7, demolin=7, speed=5 },
-  [D.MANIS_SPEEDSTAR_BEHEMOTH] = { tungsten=9, demolin=9, speed=7 },
+  [D.MANIS_SPEEDSTAR_SMALL]    = { tungsten=5, demolin=3, speed=1 },
+  [D.MANIS_SPEEDSTAR_MEDIUM]   = { tungsten=5, demolin=3, speed=1 },
+  [D.MANIS_SPEEDSTAR_BIG]      = { tungsten=5, demolin=3, speed=1 },
+  [D.MANIS_SPEEDSTAR_BEHEMOTH] = { tungsten=5, demolin=3, speed=1 },
 
-  [D.MANIS_SPEEDSTAR_SMALL_ALT]    = { iron=10, copper=5, demolin=3, speed=1 },
-  [D.MANIS_SPEEDSTAR_MEDIUM_ALT]   = { iron=10, copper=5, demolin=5, speed=3 },
-  [D.MANIS_SPEEDSTAR_BIG_ALT]      = { tungsten=1, iron=15, copper=15, demolin=7, speed=5 },
-  [D.MANIS_SPEEDSTAR_BEHEMOTH_ALT] = { tungsten=3, iron=15, copper=15, demolin=9, speed=7 },
+  [D.MANIS_SPEEDSTAR_SMALL_ALT]    = { tungsten=1, iron=10, copper=5, demolin=3, speed=1 },
+  [D.MANIS_SPEEDSTAR_MEDIUM_ALT]   = { tungsten=1, iron=10, copper=5, demolin=3, speed=1 },
+  [D.MANIS_SPEEDSTAR_BIG_ALT]      = { tungsten=1, iron=10, copper=5, demolin=3, speed=1 },
+  [D.MANIS_SPEEDSTAR_BEHEMOTH_ALT] = { tungsten=1, iron=10, copper=5, demolin=3, speed=1 },
 
   -- gigantic-demolisher series
-  [D.MANIS_GIGANTIC_SMALL]    = { tungsten=5, demolin=3, gigantic=1 },
-  [D.MANIS_GIGANTIC_MEDIUM]   = { tungsten=7, demolin=5, gigantic=3 },
-  [D.MANIS_GIGANTIC_BIG]      = { tungsten=9, demolin=7, gigantic=5 },
-  [D.MANIS_GIGANTIC_BEHEMOTH] = { tungsten=11, demolin=9, gigantic=7 },
+  [D.MANIS_GIGANTIC_SMALL]    = { tungsten=7, demolin=3, gigantic=1 },
+  [D.MANIS_GIGANTIC_MEDIUM]   = { tungsten=7, demolin=3, gigantic=1 },
+  [D.MANIS_GIGANTIC_BIG]      = { tungsten=7, demolin=3, gigantic=1 },
+  [D.MANIS_GIGANTIC_BEHEMOTH] = { tungsten=7, demolin=3, gigantic=1 },
 
-  [D.MANIS_GIGANTIC_SMALL_ALT]    = { tungsten=1, iron=15, copper=15, demolin=3, gigantic=1 },
-  [D.MANIS_GIGANTIC_MEDIUM_ALT]   = { tungsten=3, iron=15, copper=15, demolin=5, gigantic=3 },
-  [D.MANIS_GIGANTIC_BIG_ALT]      = { tungsten=5, iron=15, copper=15, demolin=7, gigantic=5 },
-  [D.MANIS_GIGANTIC_BEHEMOTH_ALT] = { tungsten=7, iron=15, copper=15, demolin=9, gigantic=7 },
+  [D.MANIS_GIGANTIC_SMALL_ALT]    = { tungsten=3, iron=15, copper=15, demolin=3, gigantic=1 },
+  [D.MANIS_GIGANTIC_MEDIUM_ALT]   = { tungsten=3, iron=15, copper=15, demolin=3, gigantic=1 },
+  [D.MANIS_GIGANTIC_BIG_ALT]      = { tungsten=3, iron=15, copper=15, demolin=3, gigantic=1 },
+  [D.MANIS_GIGANTIC_BEHEMOTH_ALT] = { tungsten=3, iron=15, copper=15, demolin=3, gigantic=1 },
 
   -- crazy-king-demolisher series
-  [D.MANIS_CRAZY_KING]     = { tungsten=17, demolin=9, speed=9, gigantic=9, king=9 },
-  [D.MANIS_CRAZY_KING_ALT] = { tungsten=9, iron=15, copper=15, demolin=11, speed=9, gigantic=9, king=7 },
+  [D.MANIS_CRAZY_KING_SMALL]            = { tungsten=17, demolin=9, speed=9, gigantic=9, king=1 },
+  [D.MANIS_CRAZY_KING_MEDIUM]     = { tungsten=17, demolin=9, speed=9, gigantic=9, king=1 },
+  [D.MANIS_CRAZY_KING_BIG]        = { tungsten=17, demolin=9, speed=9, gigantic=9, king=1 },
+  [D.MANIS_CRAZY_KING_BEHEMOTH]   = { tungsten=17, demolin=9, speed=9, gigantic=9, king=1 },
+  [D.MANIS_CRAZY_KING_SMALL_ALT]        = { tungsten=9, iron=15, copper=15, demolin=11, speed=3, gigantic=3, king=1 },
+  [D.MANIS_CRAZY_KING_MEDIUM_ALT] = { tungsten=9, iron=15, copper=15, demolin=11, speed=3, gigantic=3, king=1 },
+  [D.MANIS_CRAZY_KING_BIG_ALT]    = { tungsten=9, iron=15, copper=15, demolin=11, speed=3, gigantic=3, king=1 },
+  [D.MANIS_CRAZY_KING_BEHEMOTH_ALT] = { tungsten=9, iron=15, copper=15, demolin=11, speed=3, gigantic=3, king=1 },
+
+  -- baby-demolisher series
+  [D.MANIS_BABY_SMALL]      = { tungsten=1, demolin=1},
+  [D.MANIS_BABY_MEDIUM]     = { tungsten=1, demolin=1},
+  [D.MANIS_BABY_BIG]        = { tungsten=1, demolin=1},
+  [D.MANIS_BABY_BEHEMOTH]   = { tungsten=1, demolin=1},
+  [D.MANIS_BABY_SMALL_ALT]  = { iron=5, copper=2 },
+  [D.MANIS_BABY_MEDIUM_ALT] = { iron=5, copper=2 },
+  [D.MANIS_BABY_BIG_ALT]    = { iron=5, copper=2 },
+  [D.MANIS_BABY_BEHEMOTH_ALT] = { iron=5, copper=2 },
 }
 
 local function item_exists(name)
@@ -131,7 +147,6 @@ local function set_minable_results(proto, mining_time, results)
   proto.minable.results = results
 end
 
-local ok, D = pcall(require, "__Manis_definitions__/shared/demolisher_names")
 if not ok or type(D) ~= "table" or type(D.ALL) ~= "table" then
   log("DEMOLIN: demolisher_names missing; remains patch skipped")
   return
