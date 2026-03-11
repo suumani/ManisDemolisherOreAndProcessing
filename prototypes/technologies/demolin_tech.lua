@@ -118,7 +118,7 @@ data:extend({
     icon_size = 64,
     count = 1000,
     ingredients = PACKS_CORE,
-    prerequisites = {},
+    prerequisites = { "metallurgic-science-pack"},
     effects = {
       { type = "unlock-recipe", recipe = "manis-demolin-water-refinery" },
 
