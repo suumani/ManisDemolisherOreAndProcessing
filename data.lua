@@ -4,6 +4,10 @@
 -- Loads prototype definitions in a stable, incremental order.
 -- ----------------------------
 
+require("prototypes.ui.mdp_compressed_item_group")
+require("prototypes.categories.mdp_item_subgroups")
+
+require("prototypes.recipe-categories.demolin_categories")
 require("prototypes.recipe-categories.demolin_categories")
 
 require("prototypes.items.demolin_ores")

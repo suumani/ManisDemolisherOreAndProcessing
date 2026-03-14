@@ -40,9 +40,10 @@ local function make_compressed_item(science_key, stage_key, order_stage)
     name = ("manis-%s-%s-pack"):format(stage_key, science_key),
     icon = "__ManisDemolisherOreAndProcessing__/graphics/icons/science/" .. stage_key .. "-" .. science_key .. "-science-pack.png",
     icon_size = 64,
-
+    weight = 1 * kg,
     stack_size = 200,
-    subgroup = "intermediate-product",
+    group = "compressed-item",
+    subgroup = "mdp-compressed-items",
     order = ("z[demolin]-r[science]-"..order_stage.."[%s-%s]"):format(stage_key, science_key),
   }
 end
